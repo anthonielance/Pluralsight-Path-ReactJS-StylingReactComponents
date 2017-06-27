@@ -1,7 +1,4 @@
-import Radium from 'radium'
 import React from 'react'
-
-import styles from './carousel-styles'
 
 const { node, number } = React.PropTypes
 
@@ -19,7 +16,7 @@ function renderSlides(props) {
 
 function Carousel(props) {
   return (
-    <div style={styles.root}>
+    <div className="dft__carousel">
       {renderSlides(props)}
       {props.nav}
     </div>
@@ -32,4 +29,4 @@ Carousel.propTypes = {
   width: number
 }
 
-export default Radium(Carousel)
+export default Carousel

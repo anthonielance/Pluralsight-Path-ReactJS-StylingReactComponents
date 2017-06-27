@@ -1,23 +1,21 @@
-import Radium from 'radium'
+import classnames from 'classnames'
 import React from 'react'
-
-import styles from './nav-styles'
 
 const { func, bool } = React.PropTypes
 
 function getPrevStyles(props) {
-  return props.hasPrevious ? styles.prev : styles.prevHidden
+  return classnames('dft__nav__btn dft__nav__btn--prev', {'dft__nav__btn--hidden': !props.hasPrevious})
 }
 
 function getNextStyles(props) {
-  return props.hasNext ? styles.next : styles.nextHidden
+  return classnames('dft__nav__btn dft__nav__btn--next', {'dft__nav__btn--hidden': !props.hasNext})
 }
 
 function Nav(props) {
   return (
-    <div style={styles.root}>
-      <button key="prev" style={getPrevStyles(props)} onClick={props.onPrevious}>&#10094;</button>
-      <button key="next" style={getNextStyles(props)} onClick={props.onNext}>&#10095;</button>
+    <div className="dft__nav">
+      <button className={getPrevStyles(props)} onClick={props.onPrevious}>&#10094;</button>
+      <button className={getNextStyles(props)} onClick={props.onNext}>&#10095;</button>
     </div>
   )
 }
@@ -29,4 +27,4 @@ Nav.propTypes = {
   hasNext: bool
 }
 
-export default Radium(Nav)
+export default Nav
