@@ -1,3 +1,4 @@
+import Radium from 'radium'
 import React from 'react'
 
 import styles from './carousel-styles'
@@ -31,4 +32,4 @@ Carousel.propTypes = {
   width: number
 }
 
-export default Carousel
+export default Radium(Carousel)
